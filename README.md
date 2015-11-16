@@ -4,22 +4,20 @@ Travis: [![Build Status](https://travis-ci.org/Intelecom/smsgw-client-python.svg
 
 ## Pip package ##
 
-Not published yet.
-
 ```
-pip install itcsmsgw
+pip install itcsmsgwclient
 ```
 
 ## Example usage ##
 
 ```python
-import itcsmsgw
+import itcsmsgwclient
 
 // Initialize the client
-client = itcsmsgw.Client(baseAddress, serviceId, username, password)
+client = itcsmsgwclient.Client(baseAddress, serviceId, username, password)
 
 // Single recipient, 0 NOK
-messages = [itcsmsgw.Message("+47XXXXXXXX", "This is a test")]
+messages = [itcsmsgwclient.Message("+47XXXXXXXX", "This is a test")]
 
 response = client.send(messages)
 print(response)

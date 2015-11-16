@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='itcsmsgwclient',
-      version='1.0.0rc1',
+      version='1.0.1',
       description='Python client module for the Intelecom Group AS SMS gateway',
-      author='Morten Trydal',
-      author_email='morten.trydal@intele.com',
+      author='Intelecom Group AS',
+      author_email='support.interactive@intele.com',
       url='https://github.com/Intelecom/smsgw-client-python',
-      py_modules=['itcsmsgwclient'],
+      packages=['itcsmsgwclient'],
       license='MIT',
       install_requires=['jsonpickle', 'requests', 'requests-mock', 'six'],
       keywords='intelecom sms gateway',
