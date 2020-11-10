@@ -11,7 +11,7 @@ pip install itcsmsgwclient
 ## Example usage ##
 
 ```python
-import itcsmsgwclient
+from itcsmsgwclient import itcsmsgwclient
 
 // Initialize the client
 client = itcsmsgwclient.Client(baseAddress, serviceId, username, password)
