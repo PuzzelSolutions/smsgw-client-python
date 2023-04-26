@@ -1,0 +1,94 @@
+# Configuration instructions: https://python-poetry.org/docs/pyproject/
+[tool.poetry]
+name = "puzzel_sms_gateway_client"
+version = "0.1.0"
+description = "Python client for Puzzel SMS Gateway"
+license = "MIT"
+authors = [
+    "Lewi Lie Uberg <lewi.uberg@puzzel.com>",
+]
+maintainers = [
+    "Lewi Uberg <lewi.uberg@puzzel.com>",
+]
+readme = "README.md"
+homepage = "https://www.puzzel.com"
+repository = "https://github.com/PuzzelSolutions/smsgw-client-python"
+documentation = "https://github.com/PuzzelSolutions/SMS"
+keywords = ["puzzel", "sms", "smsgw", "sms-gw", "smsapi", "sms-api", "sms-gateway", "sms-gateway-client", "gsm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: MIT",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10.5"
+requests = "^2.28.1"
+pydantic = "^1.9.1"
+fastapi = "^0.78.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+mypy = "^0.961"
+pydocstyle = "^6.1.1"
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+pytest-sugar = "^0.9.4"
+types-requests = "^2.28.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | tests/.*/setup.py
+)/
+'''
+
+[tool.isort]
+profile = "black"
+src_paths = ["poetry", "tests"]
+known_first_party = "poetry"
+known_third_party = ["fastapi", "pydantic", "starlette"]
+line_length = 79
+float_to_top = true
+lines_between_types = 0
+lines_between_sections = 1
+lines_after_imports = 2
+force_single_line = false
+use_parentheses = true
+include_trailing_comma = true
+# May be added later: https://pycqa.github.io/isort/docs/configuration/options.html#skip-glob
+# skip_glob = ["*/setup.py"]
+# filter_files = true
+# atomic = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "tests/integration", "tests/unit"]
+addopts = "-v"
+python_files = "test_*.py"
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:"
+]

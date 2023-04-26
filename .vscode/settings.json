@@ -1,0 +1,25 @@
+{
+  // "python.terminal.activateEnvironment": true
+  // "testExplorer.useNativeTesting": true
+  //   "emeraldwalk.runonsave": {
+  //     "shell": "/bin/zsh",
+  //     "commands": [
+  //       {
+  //         "match": ".*\\.py$",
+  //         "isAsync": true,
+  //         "cmd": "source ~/Library/Caches/pypoetry/virtualenvs/analytics-python-ri-q2RkKCKy-py3.10/bin/activate \
+  //       && docformatter ${file} -i"
+  //       },
+  //       {
+  //         "match": ".*\\.py$",
+  //         "isAsync": true,
+  //         "cmd": "source ~/Library/Caches/pypoetry/virtualenvs/analytics-python-ri-q2RkKCKy-py3.10/bin/activate \
+  //       && autoflake ${file}"
+  //       }
+  //     ]
+  //   },
+  //   "files.associations": {
+  //     "*.env": "env",
+  //     "*.env.*": "env"
+  //   }
+}
