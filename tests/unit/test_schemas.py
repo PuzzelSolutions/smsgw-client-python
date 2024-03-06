@@ -4,6 +4,8 @@ import datetime
 import random
 
 import pytest
+from pydantic.error_wrappers import ValidationError
+
 from puzzel_sms_gateway_client import (
     GasSettings,
     MessageSettings,
@@ -13,7 +15,6 @@ from puzzel_sms_gateway_client import (
     _exceptions,
 )
 from puzzel_sms_gateway_client.schemas import DATE_FMT, TIME_FMT
-from pydantic.error_wrappers import ValidationError
 
 
 @pytest.mark.parametrize(
@@ -50,22 +51,22 @@ def test_originator_settings_should_fail():
 
 def test_gas_settings_should_pass():
     """Test the gas settings."""
-    SERVICE_CODE: str = "01010"
-    DESCRIPTION: str = "Test"
-    SERVICE_CODE_LENGTH: int = 5
+    service_code: str = "01010"
+    description: str = "Test"
+    service_code_length: int = 5
 
     gas_settings = GasSettings(
-        service_code=SERVICE_CODE,
-        description=DESCRIPTION,
+        service_code=service_code,
+        description=description,
     )
 
-    assert gas_settings.service_code == SERVICE_CODE
+    assert gas_settings.service_code == service_code
     assert type(gas_settings.service_code) is str
     assert gas_settings.service_code != ""
     assert gas_settings.service_code is not None
-    assert len(gas_settings.service_code) == SERVICE_CODE_LENGTH
+    assert len(gas_settings.service_code) == service_code_length
 
-    assert gas_settings.description == DESCRIPTION
+    assert gas_settings.description == description
     assert type(gas_settings.description) is str
     assert gas_settings.description != ""
     assert gas_settings.description is not None

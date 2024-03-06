@@ -5,9 +5,9 @@ import json
 from typing import Literal
 from warnings import warn
 
-from puzzel_sms_gateway_client import _exceptions
 from pydantic import BaseModel, validator
 
+from puzzel_sms_gateway_client import _exceptions
 
 # Date in format YYYY-MM-DD.
 DATE_FMT = "%Y-%m-%d"
@@ -39,8 +39,7 @@ class SendWindow(BaseModel):
 
     @validator("start_date", "stop_date")
     def validate_date(cls, v: str) -> str:
-        """
-        Validate date format.
+        """Validate date format.
 
         Parameters
         ----------
@@ -67,8 +66,7 @@ class SendWindow(BaseModel):
 
     @validator("start_time", "stop_time")
     def validate_time(cls, v: str) -> str:
-        """
-        Validate time format.
+        """Validate time format.
 
         Parameters
         ----------
@@ -102,24 +100,26 @@ class Parameter(BaseModel):
     udh: str | None = None
     pid: int | None = None
     flash: bool | None = None
-    parsing_type: Literal[
-        "NONE",
-        "SAFE_REMOVE_NON_GSM",
-        "SAFE_REMOVE_NON_GSM_WITH_REPLACE",
-        "AUTO_DETECT",
-    ] | None = None
+    parsing_type: (
+        Literal[
+            "NONE",
+            "SAFE_REMOVE_NON_GSM",
+            "SAFE_REMOVE_NON_GSM_WITH_REPLACE",
+            "AUTO_DETECT",
+        ]
+        | None
+    ) = None
     skip_customer_report_delivery: bool | None = None
     strex_verification_timeout: str | None = None
-    strex_merchant_sell_option: Literal[
-        "none", "confirmation", "pin"
-    ] | None = None
+    strex_merchant_sell_option: (
+        Literal["none", "confirmation", "pin"] | None
+    ) = None
     strex_confirm_channel: Literal["sms", "ussd", "otp"] | None = None
     strex_authorization_token: str | None = None
 
     @validator("dcs")
     def validate_dcs(cls, v: str) -> str:
-        """
-        Validate dcs.
+        """Validate dcs.
 
         Parameters
         ----------
@@ -144,8 +144,7 @@ class Parameter(BaseModel):
 
     @validator("udh")
     def validate_udh(cls, v: str) -> str:
-        """
-        Validate udh.
+        """Validate udh.
 
         Parameters
         ----------
@@ -170,8 +169,7 @@ class Parameter(BaseModel):
 
     @validator("pid")
     def validate_pid(cls, v: int) -> int:
-        """
-        Validate pid.
+        """Validate pid.
 
         Parameters
         ----------
@@ -196,8 +194,7 @@ class Parameter(BaseModel):
 
     @validator("strex_verification_timeout")
     def validate_strex_verification_timeout(cls, v: str) -> str:
-        """
-        Validate strex_verification_timeout.
+        """Validate strex_verification_timeout.
 
         Parameters
         ----------
@@ -223,8 +220,7 @@ class Parameter(BaseModel):
 
     @validator("strex_confirm_channel")
     def validate_strex_confirm_channel(cls, v: str) -> str:
-        """
-        Validate strex_confirm_channel.
+        """Validate strex_confirm_channel.
 
         Parameters
         ----------
@@ -263,8 +259,7 @@ class Parameter(BaseModel):
 
     @staticmethod
     def _k_v_format(key: str, value: str | int | bool) -> dict:
-        """
-        Format key-value pair to the format expected by the SMS Gateway.
+        """Format key-value pair to the format expected by the SMS Gateway.
 
         Parameters
         ----------
@@ -284,8 +279,7 @@ class Parameter(BaseModel):
         }
 
     def list(self) -> list[dict]:
-        """
-        Format parameter object to the format expected by the SMS Gateway.
+        """Format parameter object to the format expected by the SMS Gateway.
 
         Returns
         -------
@@ -299,8 +293,7 @@ class Parameter(BaseModel):
         ]
 
     def __str__(self) -> str:
-        """
-        Format parameter object to the format expected by the SMS Gateway.
+        """Format parameter object to the format expected by the SMS Gateway.
 
         Returns
         -------
@@ -332,8 +325,7 @@ class MessageSettings(BaseModel):
     def safe_remove_non_gsm_characters_deprecated(
         cls, v: bool | None
     ) -> bool | None:
-        """
-        Warn deprecated safe_remove_non_gsm_characters.
+        """Warn deprecated safe_remove_non_gsm_characters.
 
         Parameters
         ----------
@@ -365,8 +357,7 @@ class MessageSettings(BaseModel):
     def parameter_list(
         cls, v: list[dict[str, str | int | bool]] | Parameter | None
     ) -> list[dict]:
-        """
-        Format parameter object to the format expected by the SMS Gateway.
+        """Format parameter object to the format expected by the SMS Gateway.
 
         Parameters
         ----------
@@ -404,8 +395,7 @@ class Message(BaseModel):
 
     @validator("recipient")
     def validate_msisdn(cls, v: str) -> str:
-        """
-        Validate MSISDN format.
+        """Validate MSISDN format.
 
         Parameters
         ----------
@@ -432,8 +422,7 @@ class Message(BaseModel):
         return v
 
     def __str__(self) -> str:
-        """
-        Format message object to the format expected by the SMS Gateway.
+        """Format message object to the format expected by the SMS Gateway.
 
         Returns
         -------
@@ -454,8 +443,7 @@ class _Request(BaseModel):
 
     @staticmethod
     def _to_camel(string: str) -> str:
-        """
-        Convert string to camel case.
+        """Convert string to camel case.
 
         Parameters
         ----------
@@ -476,8 +464,7 @@ class _Request(BaseModel):
 
     @staticmethod
     def _to_camel_dict_recursive(d: dict) -> dict:
-        """
-        Convert dictionary keys to camel case.
+        """Convert dictionary keys to camel case.
 
         Also supports nested dictionaries and lists of dictionaries.
 
@@ -499,8 +486,7 @@ class _Request(BaseModel):
         return {_Request._to_camel(k): v for k, v in d.items()}
 
     def dict(self, camel_case=False, *args, **kwargs):
-        """
-        Convert request to dictionary.
+        """Convert request to dictionary.
 
         Parameters
         ----------

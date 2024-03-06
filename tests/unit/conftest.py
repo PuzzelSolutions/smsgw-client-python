@@ -1,6 +1,7 @@
 """Test data, functions, and fixtures automatically loaded by pytest."""
 
 import pytest
+
 from puzzel_sms_gateway_client import (
     Client,
     Message,
@@ -9,7 +10,6 @@ from puzzel_sms_gateway_client import (
     Parameter,
     SendWindow,
 )
-
 
 SERVICE_ID = 1000
 USERNAME = "admin"

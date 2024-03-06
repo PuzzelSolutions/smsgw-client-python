@@ -5,10 +5,8 @@ abstract: "Python client for Puzzel SMS Gateway."
 authors:
   - family-names: "Lie Uberg"
     given-names: Lewi
-  - family-names: "Trydal"
-    given-names: Morten
 version: 0.1.0
-date-released: 2022-07-15
+date-released: 2024-03-06
 repository-code: "https://github.com/PuzzelSolutions/smsgw-client-python"
 license: MIT
 keywords:
