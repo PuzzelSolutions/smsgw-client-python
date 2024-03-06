@@ -1,4 +1,4 @@
-"""Example of how to use the library by using the classes directly"""
+"""Example of how to use the library by using the classes directly."""
 
 from puzzel_sms_gateway_client import (
     Client,
@@ -11,12 +11,11 @@ from puzzel_sms_gateway_client import (
 )
 
 
-BASE_ADDRESS = "https://smsgw.puzzel.com/gw/rs"  # TODO: Mask this
-SERVICE_ID = 2238  # TODO: Mask this
-USERNAME = "kjapptest"  # TODO: Mask this
-PASSWORD = "kjapptest"  # TODO: Mask this
-
-recipient = "+4795002946"  # TODO: Mask this
+BASE_ADDRESS = "NEEDS TO BE SET BY THE USER"
+SERVICE_ID = 0000  # NEEDS TO BE SET BY THE USER
+USERNAME = "NEEDS TO BE SET BY THE USER"
+PASSWORD = "NEEDS TO BE SET BY THE USER"
+RECIPIENT = "+4710101010"
 
 
 client = Client(
@@ -29,14 +28,14 @@ client = Client(
 client.send(
     messages=[
         Message(
-            recipient=recipient,
+            recipient=RECIPIENT,
             content="Hello World!",
             settings=MessageSettings(  # Optional
                 send_window=SendWindow(
                     start_date="2023-04-26",
-                    stop_date="2022-04-26",  # Optional # TODO: If not included SMS is sent immediately
+                    stop_date="2022-04-26",  # Optional # If not included SMS is sent immediately
                     start_time="22:15:00",
-                    stop_time="22:16:00",  # Optional # TODO: If not included SMS is sent immediately
+                    stop_time="22:16:00",  # Optional # If not included SMS is sent immediately
                 ),
             ),
         ),

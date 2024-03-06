@@ -2,11 +2,11 @@
 import puzzel_sms_gateway_client as smsgw
 
 
-base_address = "https://smsgw.puzzel.com/gw/rs"  # TODO: Mask this
-service_id = 2238  # TODO: Mask this
-username = "kjapptest"  # TODO: Mask this
-password = "kjapptest"  # TODO: Mask this
-recipient = "+4795002946"  # TODO: Mask this
+base_address = "NEEDS TO BE SET BY THE USER"
+service_id = 0000  # NEEDS TO BE SET BY THE USER
+username = "NEEDS TO BE SET BY THE USER"
+password = "NEEDS TO BE SET BY THE USER"
+recipient = "+4710101010"
 
 
 client = smsgw.Client(
