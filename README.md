@@ -8,7 +8,7 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/PuzzelSolutions/puzzel_smsgw)](https://github.com/PuzzelSolutions/puzzel_smsgw/issues)
 ![GitHub last commit](https://img.shields.io/github/last-commit/PuzzelSolutions/puzzel_smsgw)
 
-Copyright 2021 [Puzzel AS](https://www.puzzel.com)\
+Copyright 2024 [Puzzel AS](https://www.puzzel.com)\
 [_Released under the MIT license_](LICENSE).
 
 Python client for the Puzzel SMS Gateway.
@@ -28,7 +28,7 @@ Python client for the Puzzel SMS Gateway.
 ## Prerequisites
 
 ```toml
-python = "^3.10.0"
+python = "^3.10.5"
 requests = "^2.28.1"
 pydantic = "^1.9.1"
 fastapi = "^0.78.0"

@@ -132,6 +132,7 @@ docstring-convention = "numpy"  # flake8-docstrings
 per-file-ignores = """
     __init__.py:F401
     test_*.py:F841
+    examples_*.py:F401,E501
     ./tests/unit/conftest.py:F401
     ./puzzel_sms_gateway_client/schemas.py:N805
     """  # Ignore F401 for __init__.py files
