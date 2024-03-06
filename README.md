@@ -8,7 +8,7 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/PuzzelSolutions/puzzel_smsgw)](https://github.com/PuzzelSolutions/puzzel_smsgw/issues)
 ![GitHub last commit](https://img.shields.io/github/last-commit/PuzzelSolutions/puzzel_smsgw)
 
-Copyright 2021 [Puzzel AS](https://www.puzzel.com)\
+Copyright 2024 [Puzzel AS](https://www.puzzel.com)\
 [_Released under the MIT license_](LICENSE).
 
 Python client for the Puzzel SMS Gateway.
@@ -97,7 +97,7 @@ from puzzel_sms_gateway_client import (
 
 
 BASE_ADDRESS: str = "https://[YOUR_SERVER_ADDRESS]/gw/rs"
-SERVICE_ID: int = [YOUR_SERVICE_ID]
+SERVICE_ID: int = "[YOUR_SERVICE_ID]"
 USERNAME: str = "[YOUR_USERNAME]"
 PASSWORD: str = "[YOUR_PASSWORD]"
 
