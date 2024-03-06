@@ -2,7 +2,7 @@
 # Configuration instructions: https://python-poetry.org/docs/pyproject/
 [tool.poetry]
 name = "puzzel_sms_gateway_client"
-version = "2.0.0"
+version = "2.0.2"
 description = "Python client for Puzzel SMS Gateway"
 license = "MIT"
 authors = [
@@ -17,9 +17,9 @@ repository = "https://github.com/PuzzelSolutions/smsgw-client-python"
 documentation = "https://github.com/PuzzelSolutions/SMS"
 keywords = ["puzzel", "sms", "smsgw", "sms-gw", "smsapi", "sms-api", "sms-gateway", "sms-gateway-client", "gsm"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "License :: MIT",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.10",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]

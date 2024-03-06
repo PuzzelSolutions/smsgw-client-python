@@ -1,12 +1,12 @@
 # Puzzel SMS Gateway Python Client <!-- omit in toc -->
 
-[![GitHub License](https://img.shields.io/github/license/PuzzelSolutions/puzzel_smsgw?color=blue)](LICENSE)
-[![Latest Version](https://img.shields.io/pypi/v/puzzel_smsgw.svg)](https://pypi.python.org/pypi/puzzel_smsgw/)
-[![Supported Python versions](https://img.shields.io/pypi/pyversions/puzzel_smsgw.svg)](https://pypi.python.org/pypi/puzzel_smsgw/)
-[![Downloads](https://pepy.tech/badge/puzzel_smsgw)](https://pepy.tech/project/puzzel_smsgw)
-[![Coverage](https://img.shields.io/codecov/c/github/PuzzelSolutions/puzzel_smsgw?color=blue)](https://app.codecov.io/gh/PuzzelSolutions/puzzel_smsgw)
-[![GitHub issues](https://img.shields.io/github/issues-raw/PuzzelSolutions/puzzel_smsgw)](https://github.com/PuzzelSolutions/puzzel_smsgw/issues)
-![GitHub last commit](https://img.shields.io/github/last-commit/PuzzelSolutions/puzzel_smsgw)
+[![GitHub License](https://img.shields.io/github/license/PuzzelSolutions/smsgw-client-python?color=blue)](LICENSE)
+[![Latest Version](https://img.shields.io/pypi/v/puzzel_sms_gateway_client.svg)](https://pypi.org/project/puzzel_sms_gateway_client/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/puzzel_sms_gateway_client.svg)](https://pypi.python.org/pypi/smsgw-client-python/)
+[![Downloads](https://pepy.tech/badge/puzzel_sms_gateway_client)](https://pepy.tech/project/puzzel_sms_gateway_client)
+[![Coverage](https://img.shields.io/codecov/c/github/PuzzelSolutions/smsgw-client-python?color=blue)](https://app.codecov.io/gh/PuzzelSolutions/smsgw-client-python)
+[![GitHub issues](https://img.shields.io/github/issues-raw/PuzzelSolutions/smsgw-client-python)](https://github.com/PuzzelSolutions/smsgw-client-python/issues)
+![GitHub last commit](https://img.shields.io/github/last-commit/PuzzelSolutions/smsgw-client-python)
 
 Copyright 2024 [Puzzel AS](https://www.puzzel.com)\
 [_Released under the MIT license_](LICENSE).
