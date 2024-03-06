@@ -4,12 +4,12 @@ import json
 from puzzel_sms_gateway_client import Client, Message
 
 
-BASE_ADDRESS = "https://smsgw.puzzel.com/gw/rs"  # TODO: Mask this
-SERVICE_ID = 2238  # TODO: Mask this
-USERNAME = "kjapptest"  # TODO: Mask this
-PASSWORD = "kjapptest"  # TODO: Mask this
+BASE_ADDRESS = "NEEDS TO BE SET BY THE USER"
+SERVICE_ID = 0000  # NEEDS TO BE SET BY THE USER
+USERNAME = "NEEDS TO BE SET BY THE USER"
+PASSWORD = "NEEDS TO BE SET BY THE USER"
 
-recipients = ["+4795002946", "+4795002946"]  # TODO: Mask this
+RECIPIENTS = ["+4710101010", "+4712121212"]
 
 client = Client(
     service_id=SERVICE_ID,
@@ -24,7 +24,7 @@ response = client.send(
             content="Hello World!",
         )
     ],
-    recipients=recipients,
+    recipients=RECIPIENTS,
 )
 # pretty print response
 print("\n")
