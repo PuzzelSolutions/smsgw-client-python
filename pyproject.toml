@@ -1,0 +1,175 @@
+# ################################## POETRY ##################################
+# Configuration instructions: https://python-poetry.org/docs/pyproject/
+[tool.poetry]
+name = "puzzel_sms_gateway_client"
+version = "0.1.0"
+description = "Python client for Puzzel SMS Gateway"
+license = "MIT"
+authors = [
+    "Lewi Lie Uberg <lewi.uberg@puzzel.com>",
+]
+maintainers = [
+    "Lewi Uberg <lewi.uberg@puzzel.com>",
+]
+readme = "README.md"
+homepage = "https://www.puzzel.com"
+repository = "https://github.com/PuzzelSolutions/smsgw-client-python"
+documentation = "https://github.com/PuzzelSolutions/SMS"
+keywords = ["puzzel", "sms", "smsgw", "sms-gw", "smsapi", "sms-api", "sms-gateway", "sms-gateway-client", "gsm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: MIT",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+
+[tool.poetry.dependencies]
+# ------------------------------- DEPENDENCIES -------------------------------
+python = "^3.10.5"
+requests = "^2.28.1"
+pydantic = "^1.9.1"
+fastapi = "^0.78.0"
+
+[tool.poetry.group.dev.dependencies]
+# ---------------------------- DEPENDENCIES: DEV -----------------------------
+# types-requests = "^2.28.0"
+
+[tool.poetry.group.test.dependencies]
+# ---------------------------- DEPENDENCIES: TEST ----------------------------
+pytest = "^7.4.0"
+pytest-cov = "^4.0.0"           # Test coverage
+pytest-sugar = "^0.9.6"         # Pretty test output
+
+[tool.poetry.group.format.dependencies]
+# --------------------------- DEPENDENCIES: FORMAT ---------------------------
+black = "^23.1.0"               # Code formatter
+isort = "^5.12.0"               # Sorts imports
+docformatter = {extras = ["tomli"], version = "^1.5.1"} # Formats docstrings
+
+[tool.poetry.group.lint.dependencies]
+# ---------------------------- DEPENDENCIES: LINT ----------------------------
+flake8 = "^6.0.0"                   # Linter that wraps pycodestyle, pyflakes, mccabe and third-party plugins
+flake8-pyproject = "^1.2.2"         # Flake8 plug-in loading configuration from pyproject.toml
+flake8-docstrings = "^1.7.0"        # Checks for docstrings
+flake8-bugbear = "^23.3.12"         # Detects likely bugs and design problems in Python code
+autoflake = "^2.0.2"                # Automatically remove unused imports and variables. Usage: autoflake --in-place --remove-all-unused-imports --expand-star-imports --remove-unused-variables --recursive .
+pep8-naming = "^0.13.3"             # Checks for PEP8 naming conventions
+mypy = "^1.1.1"                     # Static type checker for Python.
+loguru-mypy = "^0.0.4"              # Mypy plugin for Loguru
+
+[tool.poetry.group.security]
+# --------------------------- DEPENDENCIES: SECURITY -------------------------
+optional = true
+[tool.poetry.group.security.dependencies]
+bandit = "^1.7.5"
+
+
+[build-system]
+# ################################## BUILD ###################################
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+# ################################## TOOLS ###################################
+# ------------------------------ FORMAT: BLACK -------------------------------
+target-version = ["py310"]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \__pycache__
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | tests/.*/setup.py
+)/
+'''
+
+[tool.isort]
+# ------------------------------ FORMAT: ISORT -------------------------------
+profile = "black"
+
+[tool.autoflake]
+# ----------------------------- FORMAT: AUTOFLAKE -----------------------------
+# in-place = true
+check = false
+remove-all-unused-imports = true
+expand-star-imports = true
+
+[tool.docformatter]  # Using VSCode extension: Run on Save to format docstrings on save.
+# --------------------------- FORMAT: DOCFORMATTER ---------------------------
+wrap-summaries = 0
+wrap-descriptions = 79
+
+[tool.flake8]
+# ------------------------------- LINT: FLAKE8 -------------------------------
+max-line-length = 79
+exclude = '''
+    .eggs,
+    .git,
+    .hg,
+    __pycache__,
+    .mypy_cache,
+    .tox,
+    .venv,
+    _build,
+    buck-out,
+    build,
+    dist,
+    tests/.*/setup.py
+'''
+extend-ignore = "E203"          # flake8-bugbear
+docstring-convention = "numpy"  # flake8-docstrings
+per-file-ignores = """
+    __init__.py:F401
+    test_*.py:F841
+    ./tests/unit/conftest.py:F401
+    ./puzzel_sms_gateway_client/schemas.py:N805
+    """  # Ignore F401 for __init__.py files
+
+# [tool.pyright]  # This is for the language server in VSCode, Pylance.
+# # ------------------------------ LINT: PYRIGHT -------------------------------
+# reportGeneralTypeIssues = false
+# reportOptionalMemberAccess = false
+# reportOptionalSubscript = false
+
+[tool.mypy]
+# --------------------------------- TOOL:MYPY --------------------------------
+plugins = [
+    "loguru.mypy",
+#   "pydantic.mypy"
+]
+# --strict
+warn_redundant_casts = true
+# --strict end
+
+# [tool.pydantic-mypy]
+# init_forbid_extra = true
+# init_typed = true
+# warn_required_dynamic_aliases = true
+# warn_untyped_fields = true
+
+
+[tool.pytest.ini_options]
+# ------------------------------- TOOL:PYTEST -------------------------------
+# pythonpath = ["."]
+testpaths = ["tests", "tests/integration", "tests/unit"]
+addopts = "-v --cov=puzzel_sms_gateway_client --cov-report=html"
+python_files = "test_*.py"
+# asyncio_mode = "auto"
+
+[tool.coverage.report]
+# ----------------------------- TOOL:PYTEST-COV -----------------------------
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:"
+]
