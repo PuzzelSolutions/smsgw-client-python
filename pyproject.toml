@@ -44,7 +44,7 @@ pytest-sugar = "^0.9.6"         # Pretty test output
 
 [tool.poetry.group.format.dependencies]
 # --------------------------- DEPENDENCIES: FORMAT ---------------------------
-black = "^23.1.0"               # Code formatter
+black = ">=23.1,<25.0"               # Code formatter
 isort = "^5.12.0"               # Sorts imports
 docformatter = {extras = ["tomli"], version = "^1.5.1"} # Formats docstrings
 
