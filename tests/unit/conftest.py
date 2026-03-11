@@ -13,7 +13,7 @@ from puzzel_sms_gateway_client import (
 
 SERVICE_ID = 1000
 USERNAME = "admin"
-PASSWORD = "puzzel"
+PASSWORD = "PASSWORD"
 BASE_ADDRESS = "https://[YOUR_SERVER_ADDRESS]/gw/rs"
 SEND_MESSAGES_ENDPOINT: str = "/sendMessages"
 HEADERS: dict[str, str] = {

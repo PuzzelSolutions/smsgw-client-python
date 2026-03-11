@@ -11,19 +11,21 @@
       {
         "match": ".*\\.py$",
         "isAsync": true,
-        "cmd": "source ~/Library/Caches/pypoetry/virtualenvs/puzzel-sms-gateway-client-_tTz8lfr-py3.10/bin/activate \
-      && docformatter ${file} -i"
+        "cmd": "source ~/Library/Caches/pypoetry/virtualenvs/puzzel-sms-gateway-client-_tTz8lfr-py3.10/bin/activate && docformatter ${file} -i"
       },
       {
         "match": ".*\\.py$",
         "isAsync": true,
-        "cmd": "source ~/Library/Caches/pypoetry/virtualenvs/puzzel-sms-gateway-client-_tTz8lfr-py3.10/bin/activate \
-      && autoflake ${file}"
+        "cmd": "source ~/Library/Caches/pypoetry/virtualenvs/puzzel-sms-gateway-client-_tTz8lfr-py3.10/bin/activate && autoflake ${file}"
       }
     ]
   },
   "files.associations": {
     "*.env": "env",
     "*.env.*": "env"
-  }
+  },
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
+  "python-envs.defaultPackageManager": "ms-python.python:pip",
+  "snyk.advanced.organization": "e0bae4ca-0611-4edc-8b8d-b9c977862562",
+  "snyk.advanced.autoSelectOrganization": true
 }

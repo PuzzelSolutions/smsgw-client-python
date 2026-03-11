@@ -29,9 +29,8 @@ Python client for the Puzzel SMS Gateway.
 
 ```toml
 python = "^3.10.5"
-requests = "^2.28.1"
-pydantic = "^1.9.1"
-fastapi = "^0.78.0"
+requests = "^2.32.5"
+fastapi = "^0.135.1"
 ```
 
 Please see [pyproject.toml](pyproject.toml) for the full citation information.
