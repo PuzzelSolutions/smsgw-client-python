@@ -24,8 +24,8 @@
     "*.env": "env",
     "*.env.*": "env"
   },
-  "python-envs.defaultEnvManager": "ms-python.python:venv",
-  "python-envs.defaultPackageManager": "ms-python.python:pip",
+  "python-envs.defaultEnvManager": "ms-python.python:poetry",
+  "python-envs.defaultPackageManager": "ms-python.python:poetry",
   "snyk.advanced.organization": "e0bae4ca-0611-4edc-8b8d-b9c977862562",
   "snyk.advanced.autoSelectOrganization": true
 }
