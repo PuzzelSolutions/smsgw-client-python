@@ -224,6 +224,3 @@ cython_debug/
 
 # Exclud any file starting with 't_' then a number, and ending with '.py'
 t_*.py
-
-# Snyk Security Extension - AI Rules (auto-generated)
-.cursor/rules/snyk_rules.mdc
