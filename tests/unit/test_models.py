@@ -22,17 +22,17 @@ from src.models.settings import Settings
 
 def test_originator_type_international_value() -> None:
     """OriginatorType.International should serialise to 'International'."""
-    assert OriginatorType.International.value == "International"
+    assert OriginatorType.International == "International"
 
 
 def test_originator_type_alphanumeric_value() -> None:
     """OriginatorType.Alphanumeric should serialise to 'Alphanumeric'."""
-    assert OriginatorType.Alphanumeric.value == "Alphanumeric"
+    assert OriginatorType.Alphanumeric == "Alphanumeric"
 
 
 def test_originator_type_network_value() -> None:
     """OriginatorType.Network should serialise to 'Network'."""
-    assert OriginatorType.Network.value == "Network"
+    assert OriginatorType.Network == "Network"
 
 
 def test_originator_type_has_three_members() -> None:
