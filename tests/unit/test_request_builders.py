@@ -12,7 +12,6 @@ from src.models.gateway_request import GatewayRequest
 from src.models.message import Message
 from src.mt_http_client import MtHttpClient
 
-
 # ---------------------------------------------------------------------------
 # SendMessagesRequestBuilder (gw)
 # ---------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 """Tests for Kiota-generated data models."""
 
-from unittest.mock import MagicMock, call
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -14,7 +14,6 @@ from src.models.originator_type import OriginatorType
 from src.models.parameter import Parameter
 from src.models.send_window import SendWindow
 from src.models.settings import Settings
-
 
 # ---------------------------------------------------------------------------
 # OriginatorType enum
