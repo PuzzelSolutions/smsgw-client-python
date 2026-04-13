@@ -1,0 +1,19 @@
+# Requirements for Puzzel SMS Gateway Python Client
+#
+# Note: This file is provided for compatibility with tools that don't read pyproject.toml.
+# When using uv or modern pip, you can install directly with:
+#   uv pip install -e .
+#
+# This file is only needed if you want to install dependencies separately:
+#   pip install -r requirements.txt
+
+# Kiota dependencies
+microsoft-kiota-abstractions>=1.0.0
+microsoft-kiota-http>=1.0.0
+microsoft-kiota-serialization-json>=1.0.0
+microsoft-kiota-serialization-text>=1.0.0
+microsoft-kiota-serialization-form>=1.0.0
+microsoft-kiota-serialization-multipart>=1.0.0
+
+# HTTP client
+httpx>=0.24.0

@@ -1,0 +1,136 @@
+[project]
+name = "puzzel-sms-gateway-client"
+version = "2.0.4"
+description = "Puzzel SMS Gateway Python Client (Kiota-generated)"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "Lewi Lie Uberg", email = "lewi.uberg@puzzel.com"}
+]
+maintainers = [
+    {name = "Lewi Lie Uberg", email = "lewi.uberg@puzzel.com"}
+]
+keywords = ["puzzel", "sms", "gateway", "kiota", "api-client"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "microsoft-kiota-abstractions>=1.0.0",
+    "microsoft-kiota-http>=1.0.0",
+    "microsoft-kiota-serialization-json>=1.0.0",
+    "microsoft-kiota-serialization-text>=1.0.0",
+    "microsoft-kiota-serialization-form>=1.0.0",
+    "microsoft-kiota-serialization-multipart>=1.0.0",
+    "httpx>=0.24.0",
+]
+[dependency-groups]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "mypy>=1.17.1",
+    "ruff>=0.12.7",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://www.puzzel.com"
+Documentation = "https://github.com/PuzzelSolutions/smsgw-clients"
+Repository = "https://github.com/PuzzelSolutions/smsgw-clients"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v"
+
+[tool.black]
+line-length = 79
+target-version = ["py313"]
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 79
+indent-width = 4
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "D", "B", "UP", "RUF100"]
+ignore = ["E203"]
+preview = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+line-ending = "auto"
+docstring-code-line-length = 79
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+warn_redundant_casts = true
+disallow_untyped_defs = false
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+]
