@@ -2,7 +2,7 @@
   "descriptionHash": "5269EB413FDAB685C5F9A1648ECEDC5DE1ECA2E7A96AD20E95A0228BD8A43C50637B565F8218237F045B6EFBC307B8ECB1D11194478A84638417F7B1DB0B3414",
   "descriptionLocation": "../../../source-generator/swagger.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "MtHttpClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Puzzel.SmsGateway.Clients.MtHttp",
